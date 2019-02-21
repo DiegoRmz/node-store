@@ -1,8 +1,8 @@
-const schema = require('mongoose').Schema;
+const Model = require('mongoose').Model;
 
-const CartSchema = new schema({
-    productCode: String,
+const CartModel = new Model({
+    products: { type : Array , "default" : [] },
     userMail: String
 })
 
-module.exports = mongoose.model('Cart',CartSchema);
+module.exports = mongoose.model('Cart',CartModel);

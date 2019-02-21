@@ -1,26 +1,37 @@
-const ProductModel = require('../Schema/ProductSchema')
+const ProductModel = require('../Model/ProductModel')
 
 class Product{
-    constructor(mongooseConnection){
-        this.mongooseConnection = mongooseConnection;
-    }
-
-    createProduct(data){
-        const productSchema = new ProductModel({
+    static createProduct(data){
+        const productModel = new ProductModel({
             barcode: data.barcode,
             name: data.name,
             description: data.description,
             quantity: data.quantity,
             type: data.type
         })
+
+        productModel.save(productModel);
     }
 
-    getProducts(data){
-
+    static getProducts(){
+        return ProductModel.find();
     }
 
-    updateProduct(data){
+    static getProduct(query){
+        return ProductModel.find(query);
+    }
 
+    static updateProduct(query,dataToUpdate){
+        return ProductModel.findOneAndUpdate(
+            query,
+            {
+                barcode: dataToUpdate.barcode,
+                name: dataToUpdate.name,
+                description: dataToUpdate.description,
+                quantity: dataToUpdate.quantity,
+                type: dataToUpdate.type
+            }
+        );
     }
 }
 

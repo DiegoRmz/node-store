@@ -1,6 +1,6 @@
-const schema = require('mongoose').Schema;
+const Model = require('mongoose').Model;
 
-const UserSchema = new schema({
+const UserModel = new Model({
     name: String,
     photo: String,
     email:  {
@@ -12,4 +12,4 @@ const UserSchema = new schema({
     role: String    //User or admin?
 })
 
-module.exports = mongoose.model('User',UserSchema);
+module.exports = mongoose.model('User',UserModel);

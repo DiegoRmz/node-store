@@ -11,4 +11,4 @@ class MongooseConnection{
     }
 }
 
-module.exports = MongooseConnection;
+module.exports = new MongooseConnection(server,database);   //Hopes this gets me a singleton

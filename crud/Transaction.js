@@ -17,7 +17,7 @@ class Transaction{
     }
 
     static removeTransaction(query){
-        return TransactionModel.findOneAndUpdate(query);
+        return TransactionModel.findOneAndRemove(query);
     }
 }
 

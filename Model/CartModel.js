@@ -1,6 +1,7 @@
-const Model = require('mongoose').Model;
+const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const CartModel = new Model({
+const CartModel = new Schema({
     products: { type : Array , "default" : [] },
     userMail: String
 })

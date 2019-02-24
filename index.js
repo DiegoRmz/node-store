@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 
 const app = express();
 
+
 //Parse urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
 //Parse application/json
@@ -36,5 +37,15 @@ app.use('/*' , (req,res,next)=>{
     }
 });
 
-mongoose.connect('mongodb://localhost:27017/node-store').then(db => console.log('Connection to database established')).catch(err => console.log(err));
+cartroute(app);
+transactionroute(app);
+userroute(app);
+productroute(app);
 
+mongoose.connect('mongodb://localhost:27017/node-store')
+.then(db =>{
+    //Listen @ port 3000
+    app.listen(3000,()=>{
+        console.log('Server listening at port 3000');
+    })
+}).catch(err => console.log(err));

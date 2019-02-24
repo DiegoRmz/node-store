@@ -1,6 +1,8 @@
-const Model = require('mongoose').Model;
+const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const UserModel = new Model({
+
+const UserModel = new Schema({
     name: String,
     photo: String,
     email:  {

@@ -7,7 +7,8 @@ class Product{
             name: data.name,
             description: data.description,
             quantity: data.quantity,
-            type: data.type
+            type: data.type,
+            photo: data.photo
         })
 
         productModel.save(productModel);
@@ -29,7 +30,8 @@ class Product{
                 name: dataToUpdate.name,
                 description: dataToUpdate.description,
                 quantity: dataToUpdate.quantity,
-                type: dataToUpdate.type
+                type: dataToUpdate.type,
+                photo: data.photo
             }
         );
     }

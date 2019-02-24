@@ -1,6 +1,8 @@
-const Model = require('mongoose').Model;
+const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const TransactionModel = new Model({
+
+const TransactionModel = new Schema({
     date: String,
     userMail: String,
     quantity: String,

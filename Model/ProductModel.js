@@ -1,6 +1,8 @@
-const Model = require('mongoose').Model;
+const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const ProductModel = new Model({
+
+const ProductModel = new Schema({
     barcode:{
                 type: String,
                 required: true,
@@ -9,7 +11,8 @@ const ProductModel = new Model({
     name: String,
     description: String,
     quantity: Number,
-    type: String
+    type: String,
+    photo: String
 })
 
 module.exports = mongoose.model('Product',ProductModel);

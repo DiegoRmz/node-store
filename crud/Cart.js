@@ -2,12 +2,12 @@ const CartModel = require('../Model/CartModel')
 
 class Cart{
     static createCart(data){
-        const CartModel = new CartModel({
+        const cartModel = new CartModel({
             products: data.products,
             userMail: data.userMail
         })
 
-        CartModel.save(CartModel);
+        return cartModel.save(cartModel);
     }
 
     static getCarts(query){

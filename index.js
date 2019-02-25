@@ -42,10 +42,10 @@ transactionroute(app);
 userroute(app);
 productroute(app);
 
-mongoose.connect('mongodb://localhost:27017/node-store')
+mongoose.connect('mongodb://localhost:27017/my-node-store')
 .then(db =>{
     //Listen @ port 3000
-    app.listen(3000,()=>{
-        console.log('Server listening at port 3000');
+    app.listen(3030,()=>{
+        console.log('Server listening at port 3030');
     })
 }).catch(err => console.log(err));

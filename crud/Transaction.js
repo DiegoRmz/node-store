@@ -2,14 +2,14 @@ const TransactionModel = require('../Model/TransactionModel')
 
 class Transaction{
     static createTransaction(data){
-        const TransactionModel = new TransactionModel({
+        const transactionModel = new TransactionModel({
             date: data.date,
             userMail: data.userMail,
             quantity: data.quantity,
             cartId: data.cartId
         })
 
-        TransactionModel.save(TransactionModel);
+        return transactionModel.save(transactionModel);
     }
 
     static getTransactions(query){

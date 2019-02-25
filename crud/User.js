@@ -2,7 +2,7 @@ const UserModel = require('../Model/UserModel')
 
 class User{
     static createUser(data){
-        const UserModel = new UserModel({
+        const userModel = new UserModel({
             name: data.name,
             photo: data.photo,
             email:  data.email,
@@ -10,14 +10,14 @@ class User{
             role: data.role    //User or admin?
         })
 
-        UserModel.save(UserModel);
+        return userModel.save(userModel);
     }
 
     static getUsers(){
         return UserModel.find();
     }
 
-    getUser(query){
+    static getUser(query){
         return UserModel.find(query)
     }
 

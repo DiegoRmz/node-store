@@ -11,7 +11,7 @@ class Product{
             photo: data.photo
         })
 
-        productModel.save(productModel);
+        return productModel.save(productModel);
     }
 
     static getProducts(){
